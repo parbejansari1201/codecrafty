@@ -259,7 +259,7 @@ int main() {
     c: {
         id: "c",
         label: "C",
-        logoPath: "/cpp.png",
+        logoPath: "/c.png",
         pistonRuntime: { language: "c", version: "10.2.0" },
         monacoLanguage: "c",
         defaultCode: `

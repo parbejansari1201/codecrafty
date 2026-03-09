@@ -26,7 +26,7 @@ const SnippetDetailPage = () => {
         <div className="max-w-[1200px] mx-auto">
           {/* Header */}
           <div className="bg-[#121218] border border-[#ffffff0a] rounded-2xl p-6 sm:p-8 mb-6 backdrop-blur-xl">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+            <div className="flex flex-col md:flex-row lg:flex-row md:items-start lg:items-start sm:items-center lg:justify-between md:justify-between gap-4 mb-6">
               <div className="flex items-center gap-4">
                 <div className="flex items-center justify-center size-12 rounded-xl bg-[#ffffff08] p-2.5">
                   <Image
@@ -38,7 +38,10 @@ const SnippetDetailPage = () => {
                   />
                 </div>
                 <div>
-                  <h1 className="text-xl sm:text-2xl font-semibold text-white mb-2">
+                  <h1 className="md:text-xl block md:hidden text-[16px] font-semibold text-white mb-2">
+                    {snippet.title.length > 37 ? snippet.title.slice(0, 37) + "..." : snippet.title}
+                  </h1>
+                  <h1 className="md:text-xl lg:block md:block hidden text-[16px] font-semibold text-white mb-2">
                     {snippet.title}
                   </h1>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
@@ -57,7 +60,7 @@ const SnippetDetailPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 
+              <div className="relative group flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 bg-gray-800/50 
                 hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden">
                 {snippet.language.toUpperCase()}
 

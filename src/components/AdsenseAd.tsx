@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function AdsenseAd() {
   useEffect(() => {
     try {
-      // @ts-ignore
+      // @ts-expect-error - ignore error
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {}
   }, []);

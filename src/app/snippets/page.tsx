@@ -22,7 +22,7 @@ function SnippetsPage() {
   if (snippets === undefined) {
     return (
       <div className="min-h-screen">
-        <NavigationHeader />
+        <NavigationHeader bgColor="bg-[#0a0a0f]/80"/>
         <SnippetsPageSkeleton />
       </div>
     );
@@ -32,7 +32,7 @@ function SnippetsPage() {
   if (!mounted) {
     return (
       <div className="min-h-screen bg-[#0a0a0f]">
-        <NavigationHeader />
+        <NavigationHeader  />
         <div className="relative max-w-7xl mx-auto px-4 py-12">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-linear-to-r from-blue-500/10 to-purple-500/10 text-sm text-gray-400 mb-6">

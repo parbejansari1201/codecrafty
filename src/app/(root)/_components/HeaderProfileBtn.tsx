@@ -45,7 +45,7 @@ function HeaderProfileBtn() {
             </UserButton>
             <SignedOut>
                 {/* <LoginButton /> */}
-                <SignInButton />
+                <SignInButton mode="modal"/>
             </SignedOut>
         </>
     );

@@ -3,13 +3,12 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { Blocks, Code2 } from "lucide-react";
 import Navigate from "./Navigate";
 
-const NavigationHeader = () => {
+const NavigationHeader = ({ bgColor }: { bgColor?: string }) => {
 
     return (
         <div className="sticky z-10 top-0">
             <div
-                className="flex items-center lg:justify-between justify-center 
-        bg-[#0a0a0f]/80 backdrop-blur-xl p-6"
+                className={`flex items-center lg:justify-between justify-center ${bgColor} backdrop-blur-xl p-6`}
             >
                 <div className="hidden lg:flex items-center gap-8">
                     <Navigate href="/" className="flex items-center gap-3 group relative">
