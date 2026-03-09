@@ -9,7 +9,6 @@ import { Suspense } from "react";
 import TopLoader from "@/components/TopLoader";
 import Script from "next/script";
 import AdsenseAd from "@/components/AdsenseAd";
-import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,11 +103,6 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <head>
-          {/* Popunder */}
-          <Script
-            src="https://cardinaltangible.com/4f/99/52/4f995267e1c6a1a6840e190ba5638af2.js"
-            strategy="beforeInteractive"
-          />
 
           {/* Google Adsense */}
           <Script
@@ -162,40 +156,6 @@ export default function RootLayout({
             {children}
 
             <AdsenseAd />
-
-
-            {/* Native Adsterra */}
-            <div id="container-642ebed44c35363b1269292ce70b2cf1"></div>
-
-            <Script
-              async
-              data-cfasync="false"
-              src="https://pl28876281.effectivegatecpm.com/642ebed44c35363b1269292ce70b2cf1/invoke.js"
-              strategy="afterInteractive"
-            />
-
-            {/* Social Bar Ad */}
-            <Script
-              src="https://pl28882988.effectivegatecpm.com/5c/24/5b/5c245b02715c54f05d60e2f7b839ac9e.js"
-              strategy="afterInteractive"
-            />
-
-            {/* Adsterra referral banner */}
-            <div style={{ maxWidth: 728 }}>
-              <a
-                href="https://beta.publishers.adsterra.com/referral/PuL4XmYrCg"
-                rel="nofollow"
-                target="_blank"
-              >
-                <Image
-                  src="https://landings-cdn.adsterratech.com/referralBanners/png/728%20x%2090%20px.png"
-                  alt="Adsterra referral banner"
-                  width={728}
-                  height={90}
-                  style={{ width: "100%", height: "auto" }}
-                />
-              </a>
-            </div>
 
             <Footer />
             <Toaster />
