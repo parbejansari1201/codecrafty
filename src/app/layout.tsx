@@ -106,7 +106,7 @@ export default function RootLayout({
         <head>
           {/* Popunder */}
           <Script
-            src="https://pl28876121.effectivegatecpm.com/4f/99/52/4f995267e1c6a1a6840e190ba5638af2.js"
+            src="https://cardinaltangible.com/4f/99/52/4f995267e1c6a1a6840e190ba5638af2.js"
             strategy="beforeInteractive"
           />
 
