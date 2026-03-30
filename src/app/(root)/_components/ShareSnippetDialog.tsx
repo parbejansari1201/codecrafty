@@ -1,18 +1,23 @@
 import { useCodeEditorStore } from '@/store/useCodeEditorStore';
 import { useMutation } from 'convex/react';
 import { X } from 'lucide-react';
-import React, { useState } from 'react'
+import React, { ChangeEvent, InputEventHandler, useEffect, useRef, useState } from 'react'
 import { api } from '../../../../convex/_generated/api';
 import toast from "react-hot-toast";
 
 const ShareSnippetDialog = ({ onClose }: { onClose: () => void }) => {
     const [title, setTitle] = useState("");
+    const inputBox = useRef<HTMLInputElement>(null);
     const [isSharing, setIsSharing] = useState(false);
     const { getCode, language } = useCodeEditorStore();
     const createSnippet = useMutation(api.snippets.createSnippet);
 
     const handleShare = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!title.trim()) {
+            toast.error("Title cannot be empty");
+            return;
+        }
 
         setIsSharing(true);
 
@@ -28,6 +33,14 @@ const ShareSnippetDialog = ({ onClose }: { onClose: () => void }) => {
             setIsSharing(false);
         }
     }
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.target.value);
+    };
+
+    useEffect(() => {
+        inputBox.current?.focus();
+    }, [])
 
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -47,8 +60,9 @@ const ShareSnippetDialog = ({ onClose }: { onClose: () => void }) => {
                         <input
                             type="text"
                             id="title"
+                            ref={inputBox}
                             value={title}
-                            onChange={(e) => setTitle(e.target.value)}
+                            onChange={(e) => handleChange(e)}
                             className="w-full px-3 py-2 bg-[#181825] border border-[#313244] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Enter snippet title"
                             required

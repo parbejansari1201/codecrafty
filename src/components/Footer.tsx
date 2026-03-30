@@ -21,6 +21,9 @@ function Footer() {
                         <Navigate href="/terms" className="text-gray-400 hover:text-gray-300 transition-colors">
                             Terms
                         </Navigate>
+                        <Navigate href="/contact" className="text-gray-400 hover:text-gray-300 transition-colors">
+                            Contact Us
+                        </Navigate>
                     </div>
                 </div>
             </div>
